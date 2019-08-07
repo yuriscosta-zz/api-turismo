@@ -43,6 +43,10 @@ INSTALLED_APPS = [
     
     # Created
     'core',
+    'atracoes',
+    'comentarios',
+    'avaliacoes',
+    'enderecos',
 ]
 
 MIDDLEWARE = [
