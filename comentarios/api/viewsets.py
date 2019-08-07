@@ -7,3 +7,4 @@ from .serializers import ComentarioSerializer
 class ComentarioViewSet(ModelViewSet):
     queryset = Comentario.objects.all()
     serializer_class = ComentarioSerializer
+    filter_fields = ('usuario', 'comentario', 'data', 'aprovado')
