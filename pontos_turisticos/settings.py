@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     # Third-party
     'rest_framework',
+    'django_filters',
 
     # Created
     'core',
@@ -132,3 +133,7 @@ STATIC_URL = '/static/'
 MEDIA_ROOT = 'imagens'
 
 MEDIA_URL = '/media/'
+
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']
+}
