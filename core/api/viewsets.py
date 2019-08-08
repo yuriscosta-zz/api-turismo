@@ -12,8 +12,8 @@ from .serializers import PontoTuristicoSerializer
 class PontoTuristicoViewSet(ModelViewSet):
     queryset = PontoTuristico.objects.all()
     serializer_class = PontoTuristicoSerializer
-    permission_classes = (IsAuthenticated,)
-    authentication_classes = (TokenAuthentication,)
+    # permission_classes = (IsAuthenticated,)
+    # authentication_classes = (TokenAuthentication,)
     # filter_fields = ('nome', 'descricao', 'aprovado')
     filter_backends = (SearchFilter,)
     search_fields = ('nome', 'descricao')

@@ -9,6 +9,6 @@ from .serializers import AtracaoSerializer
 class AtracaoViewSet(ModelViewSet):
     queryset = Atracao.objects.all()
     serializer_class = AtracaoSerializer
-    permission_classes = (IsAuthenticated,)
-    authentication_classes = (TokenAuthentication,)
+    # permission_classes = (IsAuthenticated,)
+    # authentication_classes = (TokenAuthentication,)
     filter_fields = ('nome', 'descricao')
