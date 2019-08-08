@@ -1,3 +1,5 @@
+from django.http import HttpResponse
+
 from rest_framework.decorators import action
 from rest_framework.response import Response
 from rest_framework.filters import SearchFilter
@@ -54,6 +56,12 @@ class PontoTuristicoViewSet(ModelViewSet):
     def partial_update(self, request, *args, **kwargs):
         return super(PontoTuristicoViewSet, self).partial_update(request, *args, **kwargs)
 
-    # @action(methods=['POST'], detail=True)
-    # def denunciar(self, request, pk=None):
-    #     pass
+    @action(methods=['POST'], detail=True)
+    def associa_atracoes(self, request, pk=None):
+        atracoes = request.data['ids']
+
+        ponto = PontoTuristico.objects.get(pk=pk)
+        ponto.atracoes.set(atracoes)
+        ponto.save()
+
+        return HttpResponse('OK')
