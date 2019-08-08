@@ -21,5 +21,9 @@ class PontoTuristico(models.Model):
                              null=True,
                              blank=True)
 
+    # @property
+    # def descricao_completa(self):
+    #     return '{}: {}'.format(self.nome, self.descricao)
+
     def __str__(self):
         return self.nome
